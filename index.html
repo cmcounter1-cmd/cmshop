@@ -39,23 +39,14 @@
         </div>
     </section>
 
-    <section id="order">
-        <h2>Place Your Order</h2>
-        <p>Ready for a treat? Fill out the form below to tell us what you'd like. We will contact you to confirm and arrange payment.</p>
-        
-        <form action="mailto:your.email@example.com?subject=New%20Chocolate%20Order%20Request" method="post" enctype="text/plain">
-            <label for="name">Your Name:</label>
-            <input type="text" id="name" name="customer_name" required>
-
-            <label for="email">Your Email:</label>
-            <input type="email" id="email" name="customer_email" required>
-            
-            <label for="order_details">Order Details (e.g., 2 Dark Bars, 1 Box of Truffles):</label>
-            <textarea id="order_details" name="order_details" rows="4" required></textarea>
-
-            <button type="submit">Send Order Request</button>
-        </form>
-    </section>
+    <section id="cart-area">
+    <h2>Your Order Cart</h2>
+    <div id="cart-items">
+        <p>Your cart is empty.</p>
+    </div>
+    <p class="total-price">Total: <span id="cart-total">$0.00</span></p>
+    <button id="whatsapp-checkout">Order via WhatsApp</button>
+</section>
 
     <footer>
         <p>&copy; 2025 The Artisan Chocolate Co. | Contact: <a href="mailto:your.email@example.com">Email Us</a></p>
