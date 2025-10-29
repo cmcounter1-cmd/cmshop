@@ -1,144 +1,227 @@
-/* Basic Setup and Colors */
+/* 1. Import Modern Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+
+/* --- General & Typography --- */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Poppins', sans-serif; /* Modern, clean body font */
     margin: 0;
     padding: 0;
-    background-color: #f7f3ed; /* Light, creamy background */
-    color: #3b2c2c; /* Deep brown text */
+    background-color: #fcf8f5; /* Very light, almost white background */
+    color: #4a4a4a; /* Soft charcoal text */
+    line-height: 1.6;
 }
 
 a {
-    color: #c08435; /* Gold-like color for links */
+    color: #8B4513; /* Saddle Brown link color */
     text-decoration: none;
+    transition: color 0.3s;
 }
 
-/* Header Styling */
+a:hover {
+    color: #5D4037; /* Darker brown on hover */
+}
+
+h1, h2 {
+    font-family: 'Playfair Display', serif; /* Elegant serif font for headings */
+    color: #5D4037; /* Rich Dark Brown */
+    font-weight: 700;
+}
+
+/* --- Header Styling (Hero Section) --- */
 header {
-    background-color: #5d4037; /* Dark chocolate brown */
-    color: #fff;
-    padding: 40px 20px;
+    background-color: #efebe9; /* Light contrast background */
+    padding: 80px 20px;
     text-align: center;
+    border-bottom: 2px solid #D7CCC8;
 }
 
 header h1 {
     margin: 0;
-    font-size: 2.5em;
-    font-weight: 300;
+    font-size: 3.5em;
+    color: #5D4037; 
 }
 
-/* Product Section Layout */
+header p {
+    font-size: 1.2em;
+    color: #8B4513; /* Accent color for the tagline */
+    margin-top: 10px;
+}
+
+/* --- Product Section Layout --- */
 #products {
-    padding: 60px 20px;
+    padding: 80px 5%;
     text-align: center;
 }
 
 #products h2 {
-    color: #4e342e;
-    margin-bottom: 40px;
-    font-size: 2em;
+    font-size: 2.5em;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+/* Simple underline effect for the section title */
+#products h2::after {
+    content: '';
+    width: 60px;
+    height: 3px;
+    background-color: #8B4513;
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .product-card {
-    border: 1px solid #d7ccc8;
-    background-color: #fff;
-    border-radius: 8px;
-    padding: 20px;
-    margin: 15px;
+    border: 1px solid #e0e0e0;
+    background-color: #ffffff;
+    border-radius: 12px; /* Smoother corners */
+    padding: 25px;
+    margin: 20px;
     display: inline-block;
-    width: 300px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    transition: transform 0.2s;
+    width: 280px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08); /* More refined shadow */
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: left;
 }
 
 .product-card:hover {
-    transform: translateY(-5px); /* Lift card slightly on hover */
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
 }
 
 .product-card img {
     width: 100%;
-    height: 200px;
-    object-fit: cover; /* Ensures images look good even if sizes differ */
-    border-radius: 4px;
-    margin-bottom: 15px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 20px;
 }
 
 .product-card h3 {
-    color: #5d4037;
+    font-family: 'Poppins', sans-serif;
+    color: #5D4037;
+    font-weight: 600;
     margin: 10px 0;
+    font-size: 1.4em;
 }
 
-.price {
-    font-weight: bold;
-    color: #c08435; 
-    font-size: 1.2em;
+.product-card p {
+    color: #757575; /* Lighter text for descriptions */
+    font-size: 0.9em;
+    margin-bottom: 15px;
+}
+
+.product-price {
+    font-weight: 700;
+    color: #C08435; /* Gold-like accent color */
+    font-size: 1.5em;
     margin-top: 10px;
     display: block;
 }
 
-/* Order Form Styling */
-#order {
+/* --- Cart/Order Area Styling --- */
+#cart-area {
     background-color: #efebe9; 
     padding: 60px 20%;
     text-align: center;
 }
 
-#order h2 {
-    color: #4e342e;
+#cart-area h2 {
+    font-size: 2em;
     margin-bottom: 30px;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
-    max-width: 500px;
-    margin: 0 auto;
-    padding: 30px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+.total-price {
+    font-size: 1.5em;
+    font-weight: 600;
+    color: #5D4037;
+    margin: 20px 0;
 }
 
-label {
-    margin-top: 15px;
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-input[type="text"], 
-input[type="email"], 
-textarea {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 1em;
-}
-
-textarea {
-    resize: vertical;
-}
-
-button[type="submit"] {
-    background-color: #c08435; 
+#whatsapp-checkout {
+    background-color: #25D366; /* WhatsApp Green */
     color: white;
-    padding: 15px;
-    margin-top: 25px;
+    padding: 15px 30px;
     border: none;
-    border-radius: 4px;
+    border-radius: 50px; /* Pill-shaped button */
     cursor: pointer;
     font-size: 1.1em;
+    font-weight: 600;
     transition: background-color 0.3s;
 }
 
-button[type="submit"]:hover {
-    background-color: #a8732f; 
+#whatsapp-checkout:hover {
+    background-color: #1EAF55; 
 }
 
-/* Footer Styling */
+/* --- Footer Styling --- */
 footer {
-    background-color: #3b2c2c;
+    background-color: #5D4037;
     color: #fff;
     text-align: center;
-    padding: 20px 0;
+    padding: 30px 0;
     font-size: 0.9em;
+}
+
+footer a {
+    color: #D7CCC8;
+}
+
+/* --- Simple Cart Display Styling --- */
+#cart-items {
+    max-width: 500px;
+    margin: 0 auto 20px auto;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+    min-height: 50px;
+    text-align: left;
+}
+
+.cart-item {
+    padding: 8px 0;
+    border-bottom: 1px dotted #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart-item:last-child {
+    border-bottom: none;
+}
+
+.remove-item {
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 0.8em;
+    transition: background-color 0.3s;
+}
+
+.remove-item:hover {
+    background-color: #c9302c;
+}
+
+/* --- Media Queries for Responsiveness --- */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.5em;
+    }
+
+    #products {
+        padding: 40px 20px;
+    }
+
+    .product-card {
+        width: 90%;
+        margin: 15px auto;
+    }
+
+    #cart-area {
+        padding: 40px 10%;
+    }
 }
